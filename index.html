@@ -1,21 +1,117 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bene Essere</title>
-<style>
-  body {
-    background-color: #ffe3e5;
-    color: #8b6c5f;
-    margin: 3em;
-    text-align: center;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf7f2">
+  <meta name="description" content="Bene Essere: yoga, essenze floreali e percorsi olistici.">
+  <title>Bene Essere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
 </head>
-<body class="lang-en">
-  <h1>Bene Essere</h1>
-  <p>Coming soon</p>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inizio" aria-label="Bene Essere">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>Bene <em>Essere</em></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Apri il menu">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navigazione principale">
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#attività">Attività</a>
+      <a class="nav-contact" href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inizio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Bene <em>Essere</em></h1>
+        <p class="hero-intro">Yoga · Risveglio spirituale · Trattamenti energetici</p>
+        <a class="text-link" href="#chi-sono">Chi sono <span aria-hidden="true">↓</span></a>
+      </div>
+      <img class="hero-eagle" src="style/eagle.svg" alt="Sagoma di un'aquila in volo">
+    </section>
+
+    <section class="intro section-wrap" id="chi-sono" aria-labelledby="chi-sono-title">
+      <div class="intro-content">
+        <h2 id="chi-sono-title">Chi sono</h2>
+        <div class="intro-text">
+          <p>Presentazione in aggiornamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="treatments" id="attività" aria-labelledby="attività-title">
+      <div class="section-wrap">
+        <div class="treatments-heading">
+          <h2 id="attività-title">Attività</h2>
+          <p>Descrizioni in aggiornamento.</p>
+        </div>
+        <div class="treatment-list">
+          <article class="treatment-item">
+            <span class="treatment-mark" aria-hidden="true">✳</span>
+            <div>
+              <h3>Yoga</h3>
+              <p>Informazioni in aggiornamento.</p>
+            </div>
+          </article>
+          <article class="treatment-item">
+            <span class="treatment-mark" aria-hidden="true">✳</span>
+            <div>
+              <h3>Risveglio spirituale</h3>
+              <p>Informazioni in aggiornamento.</p>
+            </div>
+          </article>
+          <article class="treatment-item">
+            <span class="treatment-mark" aria-hidden="true">✳</span>
+            <div>
+              <h3>Trattamenti energetici</h3>
+              <p>Informazioni in aggiornamento.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-wrap" id="contatti" aria-labelledby="contatti-title">
+      <div class="contact-content">
+        <h2 id="contatti-title">Contatti</h2>
+        <p>Recapiti in aggiornamento.</p>
+      </div>
+      <img class="contact-feather" src="style/feather.svg" alt="" aria-hidden="true" loading="lazy">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#inizio"><span class="brand-mark" aria-hidden="true">✳</span><span>Bene <em>Essere</em></span></a>
+    <p>Yoga · Risveglio spirituale · Trattamenti energetici</p>
+    <span class="copyright">© <span id="year"></span> Bene Essere</span>
+  </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+      menuToggle.setAttribute('aria-label', isExpanded ? 'Apri il menu' : 'Chiudi il menu');
+      siteNav.classList.toggle('is-open', !isExpanded);
+    });
+
+    siteNav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Apri il menu');
+        siteNav.classList.remove('is-open');
+      }
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
 </body>
-<script></script>
 </html>
