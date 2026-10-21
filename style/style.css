@@ -199,6 +199,7 @@ h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; }
   background-color: transparent;
   cursor: pointer;
   padding: 0;
+  text-align: left;
 }
 .expand-button, .collapse-button {
   color: var(--gold);
