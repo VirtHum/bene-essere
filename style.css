@@ -11,6 +11,7 @@
   --ink: #493f3b;
   --muted: #635853;
   --sky: #d9e1e3;
+  --blue: #1e2bae;
   --sans-alt: "Poppins", sans-serif;
   --sans: "DM Sans", sans-serif;
 }
@@ -58,6 +59,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hyphen {
   color: var(--muted);
+}
+
+h1 .hyphen {
+  margin-left: -3px;
+  margin-right: -4px;
 }
 
 .brand-mark { color: var(--gold); font: 18px/1 var(--sans); }
@@ -114,10 +120,17 @@ h2 {
 }
 
 .hero h1 { 
-  margin: 0 0 24px;
-  font-size: 3.7rem;
+  margin: 0;
+  font-size: 3.3rem;
   line-height: 1.08;
+  font-weight: 500;
   color: var(--gold-light);
+  width: max-content;
+ }
+ .hero-name {
+  margin-bottom: 30px;
+  width: 308px;
+  text-align: right;
  }
 
 .hero h1 em, h2 em { color: var(--rose-deep); font-weight: 400; }
@@ -283,7 +296,6 @@ h2 {
   .site-nav { gap: clamp(16px, 3vw, 24px); }
   .site-nav a { font-size: 15px; }
   .hero { min-height: initial; padding: 32px 6% 42px; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(20px, 4vw, 32px); }
-  .hero h1 { font-size: clamp(3.25rem, 8.5vw, 4.25rem); }
   .hero-image { max-width: 400px; }
   .hero-note { margin-top: clamp(29px, 5vw, 42px); }
   .section-wrap { padding-left: 8%; padding-right: 8%; }
